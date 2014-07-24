@@ -1,0 +1,77 @@
+h4 {
+  margin-top: 25px;
+}
+.row {
+  margin-bottom: 20px;
+}
+.row .row {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+[class*="col-"] {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #eee;
+  background-color: rgba(86,61,124,.15);
+  border: 1px solid #ddd;
+  border: 1px solid rgba(86,61,124,.2);
+}
+
+hr {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.kerocomic{
+  background: black;
+}
+.comicrow{
+  margin-top: 30px;
+
+
+
+}
+.comicrow .col-md-6{
+  background-color:#000000;
+  padding:20px 8px 20px 8px;
+  border: none;
+
+
+
+
+}
+    .page1{
+        padding:0px;
+        border: 10px solid #000000;
+        border-right:none;
+        border-radius: 12px;
+        float:right;
+    }
+
+    .page2{
+
+      border: 10px solid #000000;
+      border-left: none;
+      border-radius: 12px;
+      margin-left:-15px;
+      float:left;
+    }
+
+
+/**might have to adjust box to dimensions about size of image (  height:750px;
+  width:500px;)
+
+header: check what will go in navbar and make quick/dirty standins
+
+footer: next, last, button navigation through comic (should be at top too?);
+
+emulate look of comic, but don't get carried away. might be able to use lightbox
+to improve looks down the road w/ animation of page flip even!?
+
+grab container and possibly col-md-6 from css min boot and change to work for your page:
+  does this mean smaller container to exact dimension of img?
+  does this mean changing position element?
+  look into it!
+  light box jump ahead?!;
+
+
+  **/
