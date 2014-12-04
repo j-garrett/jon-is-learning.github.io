@@ -1,0 +1,126 @@
+body{
+	background: #53626F;
+	font-size:1.5em;
+	padding-top: 50px;
+}
+
+.container{
+	background:white;
+}
+#schedule-year-month{
+	text-align: left;
+	border: 1px black solid;
+	border-radius: 0px;
+	margin-top:1px;
+	padding-top:0;
+}
+
+#schedule-year{
+	background: rgb(224, 224, 224);
+	font-size:1.3em;
+	font-weight:bold;
+}
+#schedule-month{
+	border-top: 1px black solid;
+	background: white;
+	font-size:.8em;
+	font-weight: normal;
+}
+
+#specific-month{
+
+}
+a:hover{
+	text-decoration: none;
+	color: #D9661F;
+}
+
+#calendar{
+	width:80%;
+	margin:auto;
+}
+.date,
+.day{
+	border-left: 0;
+	border-right:0;
+	width:2%;
+}
+.ras .date,
+.ras .day,
+.doe .date,
+.doe .day{
+	border:0;
+	width:2%;
+}
+.ras .emptydate{
+	border-left: 0;
+	border-right:0;
+	border-top:0;
+}
+.location{
+	width:2%;
+	border-left:0;
+}
+.ras .time,
+.doe .time,
+tr .time{
+	width:11.5%;
+}
+table {
+    width: 100%;
+	margin-left:auto;
+    margin-right:auto;
+	border: 1px solid grey;
+	padding: 6px;
+	border-collapse: collapse;
+	border-radius: 30px;
+	}
+td, th {
+	border-left: 1px solid grey;
+	border-right:1px solid grey;
+	padding: 6px;
+	}
+th {
+	background-color: rgb(224, 224, 224);
+	}
+tr.doe td {
+	background-color: #d5dce7;
+	}
+tr.moffitt td {
+	background-color: #fcff9c;
+	}
+tr.ras td {
+	background-color: #FFFFFF;
+	}
+ul {
+	padding-top: 0;
+	margin-top: 0;
+
+	font-size: 1em;
+	list-style-type: none;
+	list-style-position: outside;
+	}
+a{
+	text-decoration: none;
+}
+#usefullinks{
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+@media print {
+	html, body {
+	    width: 210mm;
+	}
+	#calendar{
+		min-width: 100%;
+		max-width: 100%;
+	}
+	#calendar-table table tr{
+		border:1px black solid;
+	}
+	footer{
+		display:none;
+	}
+}
+
