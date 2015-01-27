@@ -1,0 +1,32 @@
+h1{
+margin-left:1.5em;
+}
+h1 a,
+h1 a:hover,
+h2 a,
+h2 a:hover,
+h3 a,
+h3 a:hover{
+text-decoration: none;
+color:inherit;
+}
+.tableofcontents,
+.seealso{
+padding-left:1em;
+list-style:disc;
+}
+ul{
+list-style:none;
+}
+li ul{
+list-style:disc;
+}
+/*No Longer using dt or dd
+dt{
+font-size:1.2em;
+padding-top:.5em;
+}
+dd{
+margin-left:3em;
+}
+*/
