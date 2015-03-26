@@ -21,12 +21,10 @@ body{
 p{
     text-indent:1em;
 }
-#smoothnav{
-    padding-right:1.5em;
-}
 #bookCase .book {
     width:100%;
     float: left;
+    min-height: auto;
 }
 
 #bookCase .book #bookDetails{
