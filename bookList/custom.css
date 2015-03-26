@@ -1,13 +1,5 @@
-html{
-    height:100%;
-}
 body{
-    min-height: 100%;
     padding-top:50px;
-    position:relative;
-}
-.mainContent{
-    background:#ffffff;
 }
 .readingListLogo{
     padding-top:1em;
@@ -28,4 +20,34 @@ body{
 }
 p{
     text-indent:1em;
+}
+#smoothnav{
+    padding-right:1.5em;
+}
+#bookCase .book {
+    width:100%;
+    float: left;
+}
+
+#bookCase .book #bookDetails{
+    background: #F2F2F2;
+    padding:.25em .5em .25em .5em;
+}
+#bookCase .book #bookCover{
+
+}
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+    #bookCase .book { width: 47%; }
+}
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: 992px){
+    #bookCase .book { width: 30%; }
+}
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px){
+    #bookCase .book { width: 23%; }
 }
