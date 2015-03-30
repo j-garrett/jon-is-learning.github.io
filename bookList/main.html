@@ -32,7 +32,7 @@
                      </button>
                 </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navbar" aria-expanded="false" style="height: 1px;">
+            <div class="nav-collapse collapse navbar-collapse" id="navbar" aria-expanded="false" style="height: 1px;">
               <ul class="nav navbar-nav">
                 <li><a href="#home">UC Berkeley Summer Reading List</a></li>
                 <li><a href="#list2015">Summer 2015</a></li>
@@ -483,7 +483,9 @@
               itemSelector: '.book',
               gutter:5
             });
-
+            $('.nav a').click(function(){
+                $('.nav-collapse').collapse('hide');
+            });
         </script>
     </body>
 </html>
