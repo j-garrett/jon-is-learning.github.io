@@ -1,4 +1,6 @@
-body{
+body,
+#archive,
+#list2015{
     padding-top:50px;
 }
 .readingListLogo{
