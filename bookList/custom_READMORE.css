@@ -1,0 +1,44 @@
+body{
+    padding-top:50px;
+}
+.readingListLogo{
+    padding-top:1em;
+}
+.img-responsive {
+    margin: 0 auto;
+    width: 100% \9;
+}
+.signed{
+    text-align: right;
+    font-style: italic;
+}
+p{
+    text-indent:1em;
+}
+#bookCase .book {
+    width:100%;
+    float: left;
+}
+
+#bookCase .book #bookDetails{
+    background: #F2F2F2;
+    padding:.25em .5em .25em .5em;
+}
+#bookCase .book #bookCover{
+
+}
+@media print {
+   #bookCase .book{
+        position:relative !important;
+        display:block !important;
+        left:0 !important;
+        top:auto !important;
+        float:left;
+    }
+    #bookCase{
+        height:auto !important;
+    }
+}
+article{
+    max-height:10em;
+}
