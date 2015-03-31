@@ -471,6 +471,8 @@
         <script src="http://cdnjs.cloudflare.com/ajax/libs/masonry/3.2.2/masonry.pkgd.min.js"></script>
         <!-- Readmore.js plugin for expanding summary section .book-->
         <script src="readmore.js"></script>
+        <!--Images Loaded plug in for Masonry Callback-->
+        <script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
         <script>
                     $('.nav a').click(function(){
                 $('.nav-collapse').collapse('hide');
@@ -510,7 +512,13 @@
               itemSelector: '.book',
               gutter:5
             });
+            var $container = $('#container');
 
+            $container.imagesLoaded( function(){
+              $container.masonry({
+                itemSelector : '.book'
+              });
+            });
         </script>
     </body>
 </html>
