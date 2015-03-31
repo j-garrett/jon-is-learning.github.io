@@ -1,9 +1,9 @@
-body,
-#archive,
-#list2015{
+body{
     padding-top:50px;
 }
-.readingListLogo{
+.readingListLogo,
+#archive,
+#list2015{
     padding-top:1em;
 }
 .img-responsive {
