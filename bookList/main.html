@@ -472,6 +472,15 @@
         <!-- Readmore.js plugin for expanding summary section .book-->
         <script src="readmore.js"></script>
         <script>
+                    $('.nav a').click(function(){
+                $('.nav-collapse').collapse('hide');
+            });
+            $('article').readmore({
+              speed: 1000,
+              lessLink: '<a href="#"><em>...Read less</em></a>',
+              moreLink: '<a href="#"><em>Read more...</em></a>',
+              embedCSS: false,
+            });
             $(function () {
                 $('[data-toggle="popover"]').popover({
                     container:'body'
@@ -501,15 +510,7 @@
               itemSelector: '.book',
               gutter:5
             });
-            $('.nav a').click(function(){
-                $('.nav-collapse').collapse('hide');
-            });
-            $('article').readmore({
-              speed: 1000,
-              lessLink: '<a href="#"><em>...Read less</em></a>',
-              moreLink: '<a href="#"><em>Read more...</em></a>',
-              embedCSS: false,
-            });
+
         </script>
     </body>
 </html>
