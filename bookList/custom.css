@@ -1,5 +1,5 @@
 .section{
-    padding-top:50px;
+    padding-top:65px;
 }
 .signed{
     text-align: right;
@@ -20,6 +20,7 @@ p{
 }
 article{
     max-height:14.5em;
+    min-height:14.5em;
 }
 .caption{
     background: #e5e5e5;
