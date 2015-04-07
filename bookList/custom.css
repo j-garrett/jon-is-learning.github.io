@@ -9,25 +9,35 @@
 p{
     text-indent:1em;
 }
-@media print {
+@media print{
    .thumbnail{
         position:relative !important;
         display:block !important;
         left:0 !important;
         top:auto !important;
         float:left;
+        height:auto;
+    }
+    /*decrease image size to save paper*/
+    .thumbnail img{
+        height: 200px;
+    }
+    /*show entire summary for book*/
+    article{
+        height:auto !important;
+    }
+    /*hide Read more... and Read less...*/
+    .caption a{
+        display:none !important;
     }
 }
-<<<<<<< HEAD
 @media screen{
     article{
         min-height:14.7em;
     }
-=======
+}
 article{
-    max-height:14.5em;
     min-height:14.5em;
->>>>>>> parent of f18b3ef... Print CSS Completed
 }
 .caption{
     background: #e5e5e5;
