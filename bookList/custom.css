@@ -11,12 +11,10 @@ p{
 }
 article{
     max-height:14.7em;
-    -webkit-transform:translate3d(0,0,0);
 }
 .caption{
     background: #e5e5e5;
     border-radius: 2px;
-    -webkit-transform:translate3d(0,0,0);
 }
 .thumbnail{
     border:none;
@@ -42,4 +40,19 @@ article{
     .caption a{
         display:none !important;
     }
+}
+@media screen{
+    article{
+        min-height:14.7em;
+    }
+}
+article{
+    min-height:14.5em;
+}
+.caption{
+    background: #e5e5e5;
+    border-radius: 2px;
+}
+.thumbnail{
+    border:none;
 }
