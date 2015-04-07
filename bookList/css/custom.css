@@ -1,33 +1,25 @@
 .section{
     padding-top:65px;
 }
+p{
+    text-indent:1em;
+}
 .signed{
     text-align: right;
     font-style: italic;
     font-size: .9em;
 }
-p{
-    text-indent:1em;
-}
-article{
-    max-height:14.7em;
+.thumbnail{
+    border:#e5e5e5
 }
 .caption{
     background: #e5e5e5;
     border-radius: 2px;
 }
-.thumbnail{
-    border:none;
+article{
+    max-height:14.7em;
 }
 @media print{
-   .thumbnail{
-        position:relative !important;
-        display:block !important;
-        left:0 !important;
-        top:auto !important;
-        float:left;
-        height:auto;
-    }
     /*decrease image size to save paper*/
     .thumbnail img{
         height: 200px;
@@ -40,19 +32,4 @@ article{
     .caption a{
         display:none !important;
     }
-}
-@media screen{
-    article{
-        min-height:14.7em;
-    }
-}
-article{
-    min-height:14.5em;
-}
-.caption{
-    background: #e5e5e5;
-    border-radius: 2px;
-}
-.thumbnail{
-    border:none;
 }
