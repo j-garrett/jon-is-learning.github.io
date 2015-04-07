@@ -33,7 +33,6 @@ p{
 }
 @media screen{
     article{
-        max-height:14.5em;
         min-height:14.5em;
     }
 }
