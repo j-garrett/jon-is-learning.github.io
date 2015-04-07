@@ -403,9 +403,14 @@
     });
     //read more read less function settings
     $('article').readmore({
-      speed: 300,
-      lessLink: '<a href="#"><em>...Read less</em></a>',
-      moreLink: '<a href="#"><em>Read more...</em></a>',
+        speed: 300,
+        lessLink: '<a href="#"><em>...Read less</em></a>',
+        moreLink: '<a href="#"><em>Read more...</em></a>',
+        afterToggle: function(trigger, element, expanded) {
+            if(! expanded) { // The "Close" link was clicked
+                $('html, body').animate( { scrollTop: element.offset().top }, {duration: 100 } );
+            }
+        }
     });
     //smooth scrolling for single page navigation
     $("a[href^='#']").on('click', function(e) {

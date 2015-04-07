@@ -11,10 +11,12 @@ p{
 }
 article{
     max-height:14.7em;
+    -webkit-transform:translate3d(0,0,0);
 }
 .caption{
     background: #e5e5e5;
     border-radius: 2px;
+    -webkit-transform:translate3d(0,0,0);
 }
 .thumbnail{
     border:none;
