@@ -9,6 +9,16 @@
 p{
     text-indent:1em;
 }
+article{
+    max-height:14.7em;
+}
+.caption{
+    background: #e5e5e5;
+    border-radius: 2px;
+}
+.thumbnail{
+    border:none;
+}
 @media print{
    .thumbnail{
         position:relative !important;
@@ -30,19 +40,4 @@ p{
     .caption a{
         display:none !important;
     }
-}
-@media screen{
-    article{
-        min-height:14.7em;
-    }
-}
-article{
-    min-height:14.5em;
-}
-.caption{
-    background: #e5e5e5;
-    border-radius: 2px;
-}
-.thumbnail{
-    border:none;
 }
