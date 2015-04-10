@@ -1,6 +1,10 @@
 .section{
     padding-top:1.5em;
 }
+#home,
+#list2015{
+    padding-top: 4em;
+}
 p{
     text-indent:1em;
 }
