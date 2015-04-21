@@ -47,6 +47,9 @@ article{
     border-top:1px solid transparent;
     border-color:#e7e7e7;
 }
+.footer .container{
+    background-color: #f8f8f8;
+}
 @media print{
     /*decrease image size to save paper*/
     .thumbnail img{
