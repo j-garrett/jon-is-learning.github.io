@@ -24,6 +24,10 @@ body{
     font-style: italic;
     font-size: .9em;
 }
+.summerSocial .fb-share-button,
+.summerSocial .twitter-share-button{
+    vertical-align: middle;
+}
 .thumbnail{
     border-color:#e5e5e5;
 
