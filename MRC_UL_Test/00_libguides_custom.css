@@ -1,0 +1,27 @@
+h1{
+margin-left:1.5em;
+}
+h1 a,
+h1 a:hover,
+h2 a,
+h2 a:hover,
+h3 a,
+h3 a:hover{
+text-decoration: none;
+color:inherit;
+}
+.tableofcontents,
+.seealso{
+padding-left:1em;
+list-style:disc;
+}
+ul{
+list-style:none;
+background: pink;
+}
+li ul{
+list-style:disc;
+}
+ul li{
+    background: lightblue;
+}
