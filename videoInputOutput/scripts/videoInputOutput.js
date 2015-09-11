@@ -6,8 +6,9 @@ $(document).ready(function(){
             dataType: 'json',
             data: $('form').serialize,
             success: function(result){
-                alert(result);
+                alert(hi);
             },
+            error: function(req, err){ console.log('my message' + err); },
             contentType: 'application/json'
         })
     })
