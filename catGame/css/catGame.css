@@ -19,9 +19,6 @@
     margin: 0 auto 0 1em;
     height:90%;
 }
-#gameStatsRight{
-    margin: 0 1em 0 auto;
-}
 #userCat {
     overflow:hidden;
     height: 100%;
@@ -38,6 +35,22 @@
 }
 #commonNameBanner{
 
+}
+#gameStatsRight{
+    display: inline;
+    margin: 0 1em 0 auto;
+}
+.gameStatsText>h4{
+    display:inline;
+    float:right;
+}
+.gameStatsText>p{
+    display: inline;
+    font-family: Sans-Serif;
+    font-size: 3em;
+    font-weight: 900;
+   -webkit-text-fill-color: white;
+   -webkit-text-stroke: 4px black;
 }
 #timer{
 
