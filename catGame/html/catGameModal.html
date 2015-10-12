@@ -13,61 +13,40 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/catGame.css">
+    <link rel="stylesheet" href="../css/catGameModal.css">
     <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-<!-- Cat Game container! -->
+<!--catGame Modal Test with Flexbox-->
 <div id="catGameContainer">
-<!-- Pre and post game stats modal overlay-->
-<div class="modal">
-    <!-- Input cat selection, color, player name-->
-    <form>
-    </form>
-</div>
-<!--Top bar of user stats, etc.-->
-<!--Flex box row for header of game stats.-->
-<div id="catGameHeader"  class="flexContainerRow">
-    <!--div for flex left stats-->
-    <div id="gameStatsLeft">
-        <!--Picture of cat the user has selected-->
-        <div id="userCat">
-            <img src="../img/catGame/transparentCat.png" />
-        </div>
-        <!-- Bar/Number to indicate just HOW CUTE the user is (0-100)-->
-        <div id="cutenessLevel">
-        </div>
-    </div>
-    <!-- The common name of the cat selected by the user-->
-    <div id="commonNameBanner">
-        <!--Player name to be inserted by JavaScript-->
-        <h1><small>Player 1 is now a...</small>Sand Cat</h1>
-    </div>
-    <!--div for flex right stats-->
-    <div id="gameStatsRight" class="flexContainerRow">
-        <!-- The countdown timer. Bouncing. Warning. How much time is lefT?!-->
-        <div class="gameStatsText">
-            <p id="timer">45</p>
-            <h4>Seconds<br>Remaining</h4>
-        </div>
-        <!-- Track the number of successful hunts -->
-        <div class="gameStatsText">
-            <p id="killCounter">1</p>
-            <h4>Killed</h4>
-        </div>
+<div id="modalBackLayer">
+<div id="modalContainer">
+<div id="settingsModal" class="modal">
+    <div class="innerModal">
+        <form id="playerOptionsInput">
+            <div class="formGroup">
+                <label for="playerName">Name:</label>
+                <input id="playerName" type="text" placeholder="Jon">
+            </div>
+            <div class="formGroup">
+                <label for="gameLength">Timer:</label>
+                <input id="gameLength" type="number" placeholder="45 seconds">
+            </div>
+            <div id="catChoices">
+            <img class="catChoice" src="http://jon-is-learning.github.io/fun%20images/coloredCat.png">
+            <img class="catChoice" src="http://jon-is-learning.github.io/fun%20images/coloredCat.png">
+            <img class="catChoice" src="http://jon-is-learning.github.io/fun%20images/coloredCat.png">
+            </div>
+            <button type="submit">Start Game</button>
+        </form>
     </div>
 </div>
-<div id="catGameField">
-    <!-- Container div for the repeated background and generated prey divs. The playing field.-->
-    <div id="huntingField">
-    </div>
-</div>
-<!-- Grass fence footer to help give depth. You are the cat. Peering out of your hiding place. Stalking prey.-->
-<div id="grassFooter">
 </div>
 </div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
 <script src="../js/plugins.js"></script>

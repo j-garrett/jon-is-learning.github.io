@@ -1,0 +1,55 @@
+
+#catGameContainer{
+    background:  url('http://jon.tips/fun%20images/catGrass.svg') 0px 0px/70px 100px repeat;
+    height:100vh;
+}
+#modalBackLayer{
+    height:100%;
+    width:100%;
+    background-color:hsla(308, 100%, 50%, .4);
+}
+#modalContainer{
+    display:flex;
+    height:100%;
+    width:100%;
+    align-items:center;
+    justify-content:center;
+}
+#settingsModal{
+    background:hsla(0, 100%, 100%, 0.92);
+    border:3px solid hsla(236, 100%, 31%, 1);
+    margin:auto;
+}
+.innerModal{
+}
+#playerOptionsInput{
+    padding:1em;
+}
+.formGroup{
+    display:flex;
+    justify-content:center;
+    flex-flow: row wrap;
+    margin-top:2em;
+}
+.formGroup>label{
+    flex: 1 ;
+}
+.formGroup>input{
+    height:2em;
+    flex:1 50%;
+}
+#catChoices{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:center;
+}
+.catChoice{
+    flex: 1 auto;
+    max-width:200px;
+    max-height:200px;
+    margin: 2em 2em 0 2em;
+}
+button{
+    display:block;
+    margin: 2em auto;
+}
