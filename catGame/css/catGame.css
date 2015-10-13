@@ -1,6 +1,5 @@
 #catGameContainer{
-    width:100vw;
-    height:100vh;
+
 }
 .modal{
 
@@ -16,7 +15,7 @@
     height:4em;
 }
 #catGameheader{
-
+    width:100%;
 }
 #gameStatsLeft{
     margin-right: auto;
@@ -30,7 +29,6 @@
     background: #FF00FF;
 }
 #userCat img{
-
     max-height:100%;
 }
 #cutenessLevel{
@@ -62,7 +60,7 @@
 
 }
 #catGameField{
-    width:100vw;
+    width:100%;
     height:85vh;
 }
 #huntingField{
@@ -74,7 +72,7 @@
 }
 #grassFooter{
     width:100%;
-    height:13vh;
+    height:20vh;
     position:fixed;
     bottom:0;
     background-image: url("http://jon.tips/fun%20images/grassTops.png"),

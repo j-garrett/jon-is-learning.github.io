@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/catGame.css">
+    <link rel="stylesheet" href="../css/catGameModal.css">
     <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
@@ -22,11 +23,38 @@
 <!-- Cat Game container! -->
 <div id="catGameContainer">
 <!-- Pre and post game stats modal overlay-->
-<div class="modal">
-    <!-- Input cat selection, color, player name-->
-    <form>
-    </form>
+<!-- Pre game settings selection modal-->
+<!--catGame Modal Test with Flexbox-->
+<div id="modalBackLayer2">
+<div id="modalBackLayer">
+<div id="modalContainer">
+<div id="settingsModal" class="modal">
+    <div class="innerModal">
+        <form id="playerOptionsInput">
+            <div class="formGroup">
+                <label for="playerName">Name:</label>
+                <input id="playerName" type="text" placeholder="Jon">
+            </div>
+            <div class="formGroup">
+                <label for="gameLength">Timer:</label>
+                <input id="gameLength" type="number" placeholder="45 seconds">
+            </div>
+            <div class="formGroup">
+                <label for="catColor">Cat Color:</label>
+                <input id="catColorChoice" type="color" value="#FF2CEB">
+            </div>
+            <div id="catChoices">
+            <img class="catChoice" id="catChoice1" src="http://jon-is-learning.github.io/fun%20images/coloredCat.png">
+            <img class="catChoice" id="catChoice2" src="http://jon-is-learning.github.io/fun%20images/coloredCat.png">
+            <img class="catChoice" id="catChoice3" src="http://jon-is-learning.github.io/fun%20images/coloredCat.png">
+            </div>
+            <button type="button" id="startGameButton">Start Game</button>
+        </form>
+    </div>
 </div>
+</div>
+</div>
+
 <!--Top bar of user stats, etc.-->
 <!--Flex box row for header of game stats.-->
 <div id="catGameHeader"  class="flexContainerRow">
@@ -43,7 +71,7 @@
     <!-- The common name of the cat selected by the user-->
     <div id="commonNameBanner">
         <!--Player name to be inserted by JavaScript-->
-        <h1><small>Player 1 is now a...</small>Sand Cat</h1>
+        <h1><small><span id="playerName">Player 1</span> is now a...</small>Sand Cat</h1>
     </div>
     <!--div for flex right stats-->
     <div id="gameStatsRight" class="flexContainerRow">

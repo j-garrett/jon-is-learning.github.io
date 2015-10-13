@@ -1,7 +1,8 @@
 
-#catGameContainer{
+#modalBackLayer2{
     background:  url('http://jon.tips/fun%20images/catGrass.svg') 0px 0px/70px 100px repeat;
     height:100vh;
+    width:90;
 }
 #modalBackLayer{
     height:100%;
@@ -16,7 +17,8 @@
     justify-content:center;
 }
 #settingsModal{
-    background:hsla(0, 100%, 100%, 0.92);
+    z-index:10;
+    background:hsla(0, 100%, 100%, 0.8);
     border:3px solid hsla(236, 100%, 31%, 1);
     margin:auto;
 }
@@ -33,10 +35,12 @@
 }
 .formGroup>label{
     flex: 1 ;
+    align-self:center;
 }
 .formGroup>input{
     height:2em;
-    flex:1 50%;
+    flex:1 70%;
+    align-self:center;
 }
 #catChoices{
     display:flex;
