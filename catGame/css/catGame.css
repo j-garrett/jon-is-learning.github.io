@@ -1,3 +1,6 @@
+.noDisplay{
+    display:none;
+}
 #catGameContainer{
 
 }
@@ -79,4 +82,19 @@
                     linear-gradient(to top, rgba(0, 0, 0, 1),  rgba(255, 255, 255, 0));
     background-size: 300px 500px;
     z-index: 2;
+}
+.hiddenPrey{
+    width:100px;
+    height:100px;
+    background-image: url('http://jon.tips/fun%20images/catGrass.svg');
+}
+.foundPrey{
+    animation: windBlowing 3s 3 linear;
+}
+.caughtPrey{
+    background: red;
+}
+@keyframes windBlowing{
+    75%{transform: translate(8px) rotate(5deg)}
+    25%{transform: translate(-8px) rotate(-5deg)}
 }
