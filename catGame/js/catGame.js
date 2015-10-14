@@ -15,9 +15,9 @@ catGame.preyKilled = 0;
 //method to start the game. may have to nest other functions and whatnot inside?
 catGame.startGame = function(event){
     //fade out settings modal
-    $(elModalBackLayer).fadeOut(50);
+    $(elModalBackLayer).fadeOut(500);
     //LOAD THAT GAME responsive like now DELAY KEEPS FROM OVERLAPPING
-    $(elCatGameContainer).delay(50).fadeIn(100);
+    $(elCatGameContainer).delay(500).fadeIn(1000);
     //Load game variables from user's input
     elplayerNameOutput.textContent = elPlayerNameInput.value;
     elUserCat.style.background = elCatColorChoice.value;
@@ -79,8 +79,8 @@ var elHungtingField = document.getElementById('huntingField');
 //Compare the below event listener with the method used on codepen http://codepen.io/jon-is-learning/pen/xwgpXd?editors=001
 //the Hunt and Kill Mice code pen puts listener on parent element as listener. is this better?
 $(document).ready(function(){
-    $(elModalBackLayer).fadeIn(100);
-    $(elSettingsModal).fadeIn(250);
+    $(elModalBackLayer).fadeIn(1000);
+    $(elSettingsModal).fadeIn(2500);
     console.log(successfulKills);
 });
 elStartButton.addEventListener("click", catGame.startGame, false);
