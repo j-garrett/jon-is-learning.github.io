@@ -13,31 +13,59 @@ catGame.preyCreated = 0;
 catGame.preyKilled = 0;
 
 //method to start the game. may have to nest other functions and whatnot inside?
-catGame.startGame = function(event){
-    //fade out settings modal
-    $(elModalBackLayer).fadeOut(500);
-    //LOAD THAT GAME responsive like now DELAY KEEPS FROM OVERLAPPING
-    $(elCatGameContainer).delay(500).fadeIn(1000);
-    //Load game variables from user's input
-    elplayerNameOutput.textContent = elPlayerNameInput.value;
-    elUserCat.style.background = elCatColorChoice.value;
-    //change value string to number
-    var timerSet = Number($(elGameLength).val());
-    //push variables to game settings
-    elTimer.textContent = timerSet;
-
-    //set interval needs to be named so it can be cleared at end
-    var timerCounter = setInterval(timerIncrement,1000);
-    //countdown to end of game function.
-    function timerIncrement(){
-        //check if time remains
-        if(timerSet > 0){
-            timerSet -= 1;
-        }else{//if no time remains...
-            clearInterval(timerCounter);
-        }
-        //update the displayed time
+catGame.startGame = function(){
+    //form validation. look for truthy values then run function if all found
+    //should this validation be a separate function? may make easier to reuse...
+    if ( $(elGameLength).val() && elPlayerNameInput.value){
+        elGameLength.classList.remove('goodHighlight','badHighlight');
+        elPlayerNameInput.classList.remove('goodHighlight','badHighlight');
+        //fade out settings modal
+        $(elModalBackLayer).fadeOut(500);
+        //LOAD THAT GAME responsive like now DELAY KEEPS FROM OVERLAPPING
+        $(elCatGameContainer).delay(500).fadeIn(1000);
+        //Load game variables from user's input
+        elplayerNameOutput.textContent = (elPlayerNameInput.value +" is " || "You are ");
+        elUserCat.style.background = elCatColorChoice.value;
+        //change value string to number
+        var timerSet = (Number($(elGameLength).val()) || 45);
+        //push variables to game settings
         elTimer.textContent = timerSet;
+
+        //set interval needs to be named so it can be cleared at end
+        var timerCounter = setInterval(timerIncrement,1000);
+        //can't have two setIntervals so we will use a counter to decide if we add divs
+        var addDivsTimer = 0;
+
+        //countdown to end of game function.
+        function timerIncrement(){
+            //increment addDivsTimer to see if it's time to add divs
+            addDivsTimer +=1;
+            //check if time remains
+            if(timerSet > 0){
+                    //if addDivsTimer has reached a number divisible by 3 (i.e. 3 seconds have passed)
+                    //then it is time to...
+                    if( addDivsTimer%3 === 0 ){
+                        //remove Previous prey divs
+                        removePrey();
+                        //call addDiv function to add prey to map!
+                        addDivs(3);
+                    }
+                //decrement timer if time remains
+                timerSet -= 1;
+
+            }else{//if no time remains...
+                clearInterval(timerCounter);
+                $(elHungtingField).hide();
+                $('#gameResults').text("Sand Cat "+ elPlayerNameInput.value+' caught '+successfulKills+" mice!");
+                $('#gameResults').fadeIn();
+            }
+            //update the displayed time
+            elTimer.textContent = timerSet;
+        }
+    }else{
+        //check with parts of the form are failing the above check and highlight ALL elements accordingly
+        elGameLength.classList.add( elGameLength.value ? 'goodHighlight' : 'badHighlight');
+        elPlayerNameInput.classList.add( elPlayerNameInput.value ? 'goodHighlight' : 'badHighlight');
     }
 };
 
@@ -83,21 +111,46 @@ $(document).ready(function(){
     $(elSettingsModal).fadeIn(2500);
     console.log(successfulKills);
 });
-elStartButton.addEventListener("click", catGame.startGame, false);
+
+elStartButton.addEventListener("button", catGame.startGame, false);
+
+$('input').keypress(function(){
+    if(event.keyCode == 13){
+        $(elStartButton).click(catGame.startGame());
+    }
+})
+
+
 
 //add prey divs to playing field!
-function addDiv(){
-    var newDiv = document.createElement('div');
-
-    var parentDiv = elHungtingField;
-    divCoordinates();
-    //check CSS is setup to accept prey divs!
-    newDiv.classList.add('hiddenPrey');
-    newDiv.style.position = 'absolute';
-    newDiv.style.top = yCoord+'px';
-    newDiv.style.left = xCoord+'px';
-    parentDiv.appendChild(newDiv);
+function addDivs(amount){
+    //pulls given amount and creates that many divs by looping through process
+    for(amount;amount>0;amount--){
+        catGame.preyCreated += 1;
+        var newDiv = document.createElement('div');
+        newDiv.classList.add('prey','hiddenPrey');
+        var parentDiv = elHungtingField;
+        divCoordinates();
+        //check CSS is setup to accept prey divs!
+        newDiv.style.top = yCoord+'px';
+        newDiv.style.left = xCoord+'px';
+        parentDiv.appendChild(newDiv);
+    }
 };
+
+
+function divCoordinates(){
+    var windowHeight = document.documentElement.clientHeight;
+    var windowWidth = document.documentElement.clientWidth;
+    var heightModifier = ((Math.floor(Math.random() * 81))*.01);
+    var widthModifier = ((Math.floor(Math.random() * 81))*.01);
+    yCoord = windowHeight * heightModifier;
+    xCoord = windowWidth * widthModifier;
+    return yCoord;
+    return xCoord;
+};
+
+
 //prey divs start wiggling on hover
 //prey divs turn red and fadeOut when clicked
 //if there are less than 4 prey divs on screen the addDiv() runs.
@@ -112,11 +165,12 @@ function spotPrey(e){
     //element must be child of parent and NOT parent
     if (e.target !== e.currentTarget){
         var target = event.target;
+        target.classList.remove("hiddenPrey");
         //add animated CSS to element that was activated
         //(so DON'T have other elements that could be accidentally activated)
         target.classList.add("foundPrey");
         //only give players 5 seconds to catch prey before it's gone
-        $(target).delay(4000).fadeOut(1000);
+        //do above comment with CSS animation
     }
     e.stopPropagation();
 }
@@ -124,14 +178,25 @@ function killPrey(e){
     //element must be child of parent and NOT parent
     if (e.target !== e.currentTarget){
         var target = event.target;
-        //change background to bloody horror
-        target.classList.add("caughtPrey");
+        //remove other classes to avoid confusion!
         //remove wiggling... the prey will wiggle no more
+        target.classList.remove('hiddenPrey');
         target.classList.remove("foundPrey");
         //This fadeOut is conflicting with the one from spotPrey. LOOK INTO
-        $(target).fadeOut(500);
+        //$(target).fadeOut(500);
+        //going to use CSS animation to transform to display:none
+        //change background to bloody horror
+        target.classList.add("caughtPrey");
         successfulKills += 1;
         elKillCounter.textContent = successfulKills;
     }
     e.stopPropagation();
+}
+//the CSS is hiding divs, but they can still be interacted with! GET THEM GONE
+function removePrey(){
+    console.log('removePrey is called');
+    $('.prey').addClass('divsToRemove');
+    $('.prey').removeClass('prey');
+    $('.divsToRemove').fadeOut();
+    $('.divsToRemove').delay(1500).remove('.divsToRemove');
 }

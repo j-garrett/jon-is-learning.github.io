@@ -1,3 +1,9 @@
+.badHighlight{
+    background:red;
+}
+.goodHighlight{
+    background:lightgreen;
+}
 .noDisplay{
     display:none;
 }
@@ -64,7 +70,7 @@
 }
 #catGameField{
     width:100%;
-    height:85vh;
+    max-height:85vh;
 }
 #huntingField{
     width: 100%;
@@ -83,18 +89,36 @@
     background-size: 300px 500px;
     z-index: 2;
 }
-.hiddenPrey{
+.prey{
+    position:absolute;
     width:100px;
     height:100px;
     background-image: url('http://jon.tips/fun%20images/catGrass.svg');
+}
+.hiddenPrey{
+
+    animation: disappear 3s forwards ease;
 }
 .foundPrey{
     animation: windBlowing 3s 3 linear;
 }
 .caughtPrey{
-    background: red;
+    background:red;
+    animation-fill-mode:forwards;
+    animation: disappear 1.5s forwards ease ;
+}
+#gameResults{
+    text-align: center;
+    background-color: white;
 }
 @keyframes windBlowing{
     75%{transform: translate(8px) rotate(5deg)}
     25%{transform: translate(-8px) rotate(-5deg)}
+}
+
+@keyframes disappear{
+    100%{
+        opacity:0;
+        display:none;
+    }
 }
