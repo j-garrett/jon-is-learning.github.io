@@ -112,7 +112,7 @@ $(document).ready(function(){
     console.log(successfulKills);
 });
 
-elStartButton.addEventListener("button", catGame.startGame, false);
+elStartButton.addEventListener("click", catGame.startGame, false);
 
 $('input').keypress(function(){
     if(event.keyCode == 13){
