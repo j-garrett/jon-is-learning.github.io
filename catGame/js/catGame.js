@@ -14,6 +14,7 @@ catGame.preyKilled = 0;
 
 //method to start the game. may have to nest other functions and whatnot inside?
 catGame.startGame = function(){
+    event.preventDefault();
     //form validation. look for truthy values then run function if all found
     //should this validation be a separate function? may make easier to reuse...
     if ( $(elGameLength).val() && elPlayerNameInput.value){
@@ -112,13 +113,8 @@ $(document).ready(function(){
     console.log(successfulKills);
 });
 
+//add event listener to button
 elStartButton.addEventListener("click", catGame.startGame, false);
-
-$('input').keypress(function(){
-    if(event.keyCode == 13){
-        $(elStartButton).click(catGame.startGame());
-    }
-})
 
 
 
