@@ -44,7 +44,7 @@ $(document).ready(function(){
       $(this).html(html.replace(callNumberSearch, ''));
       //once array is built we can THEN push it back into DOM
       //we will add it as a new element so it can be properly linked and delimited for csv transfer
-      $(this).append('</dt><dt>'+newCallElem+'</dt>');
+      $(this).append('</dd><dd>'+newCallElem+'</dd>');
     }
   });
 
