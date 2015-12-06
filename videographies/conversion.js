@@ -1,7 +1,7 @@
 $(document).ready(function(){
 //NOW TURN CALL NUMBERS INTO PROPER LINKS!
   //create variable for regular expression that finds all call numbers
-  var callNumberSearch = new RegExp(/([vV]ideo\/C|DVD|v\/c|sound\/d|s\/d)(\s?)(x|z|(999)?)\s?:?(\s?)(\d{1,4})/ig);
+  var callNumberSearch = new RegExp(/(video\/c|dvd|v\/c|sound\/c|sound\/d|s\/d|s\/c)(\s?)(x|z|(999)?)\s?:?(\s?)(\d{1,4})/ig);
   //turn DOM into array so you can iterate over it
   var elems = document.getElementsByTagName('dd');
   //convert NodeList of all <dd> elements to an Array so we can iterate through
@@ -48,7 +48,7 @@ $(document).ready(function(){
     }
   });
 
-  //use jQuery to add metadata then copy chrome's HTML interpretation from devtools to get tidied HTML to boot.
+  //use jQuery to add metadata
   $('dl').each(function(i){ //each <dt> will look up the dom for previous header elements so they can be added to the <dt>'s metadata
       //LINTED HTML turned everything into individual lists so now we search using <dl> as base element.
       for (var i = 0 ; i <=3 ; i++){ //loop through h1 - h3 elements using i variable to increment header size
