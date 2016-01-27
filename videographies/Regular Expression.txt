@@ -53,6 +53,8 @@ Regular Expression
 
 Finding Call Numbers:
 
+
+(THIS IS UPDATE IN THE .js FILE)
 ([vV]ideo\/C|DVD|v\/c|sound\/d|s\/d)(\s?)(x|z|(999)?)\s?:?(\s?)(\d{1,4})
 
 The oskicat URL format: http://oskicat.berkeley.edu/search~S1?/eDVD+7164
