@@ -1,11 +1,7 @@
 $(document).ready(function(){
 //NOW TURN CALL NUMBERS INTO PROPER LINKS!
   //create variable for regular expression that finds all call numbers
-<<<<<<< HEAD
-  var callNumberSearch = new RegExp(/([vV]ideo\/C|DVD|v\/c|sound\/c|d|s\/d)(\s?)(x|z|(999)?)\s?:?(\s?)(\d{1,4})/ig);
-=======
-  var callNumberSearch = new RegExp(/(video\/c|dvd|v\/c|sound\/c|sound\/d|s\/d|s\/c)(\s?)(x|z|(999)?)\s?:?(\s?)(\d{1,4})/ig);
->>>>>>> origin/master
+  var callNumberSearch = new RegExp(/(video\/c|video\/d|dvd|v\/c|sound\/c|sound\/d|s\/d|s\/c)(\s?)(x|z|(999)?)\s?:?(\s?)(\d{1,4})/ig);
   //turn DOM into array so you can iterate over it
   var elems = document.getElementsByTagName('dd');
   //convert NodeList of all <dd> elements to an Array so we can iterate through
@@ -43,7 +39,7 @@ $(document).ready(function(){
         //join array so it's nice and pretty
         //THIS WILL NEED TO CHANGE TO PROPER DELIMITER?
         var newCallElem = elemArray.join(', ');
-      }   
+      }
       //delete call numbers in <dd>
       $(this).html(html.replace(callNumberSearch, ''));
       //once array is built we can THEN push it back into DOM
