@@ -1,6 +1,8 @@
 .exampleWork .imgTextWrapper {
   display: inline-block;
-  position: relative;  
+  position: relative;
+  max-width: 100%;
+  border-radius: 20px;
 }
 
 .exampleWork .imgTextWrapper .textOverlay {
@@ -17,5 +19,7 @@
 }
 .exampleWork .imgTextWrapper:hover .textOverlay{
   background-color: rgba(0,0,0,0.50);
-  transform: translate(0px,-2%) scale(1.02);
+  -webkit-transform: translate(0px,-1%) scale(1.02);
+      -ms-transform: translate(0px,-1%) scale(1.02);
+          transform: translate(0px,-1%) scale(1.02);
 }
