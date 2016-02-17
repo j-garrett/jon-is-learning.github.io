@@ -210,3 +210,11 @@ DONE---------------------
 &#149;
 
 DONE---------------------
+
+
+Replace the &# start for character encoding with â€¢.
+Replace it back to normal with excel and let drupal handle the encoding.
+
+Replaced <a with Ѭ
+
+Replaced </a> with Ж
