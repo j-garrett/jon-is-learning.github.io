@@ -212,9 +212,9 @@ DONE---------------------
 DONE---------------------
 
 
-Replace the &# start for character encoding with â€¢.
+Replace the &# start for character encoding with â€¢ which became  Ã¢â‚¬Â¢
 Replace it back to normal with excel and let drupal handle the encoding.
 
-Replaced <a with Ѭ
+Replaced <a with Ѭ which became Ã¢â‚¬Â¢149; Ñ¬
 
-Replaced </a> with Ж
+Replaced </a> with Ж which became Ð–
