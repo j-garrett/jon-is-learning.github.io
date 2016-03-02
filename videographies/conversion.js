@@ -1,7 +1,7 @@
 $(document).ready(function(){
 //NOW TURN CALL NUMBERS INTO PROPER LINKS!
   //create variable for regular expression that finds all call numbers
-  var callNumberSearch = new RegExp(/(video\/c|video\/d|dvd|v\/c|sound\/c|sound\/d|s\/d|s\/c)(\s?)(x|z|(999)?)\s?:?(\s?)(\d{1,4})/ig);
+  var callNumberSearch = new RegExp(/(video\/c|video\/d|vhs|dvd|v\/c|sound\/c|sound\/d|s\/d|s\/c)(\s|.?)(x|z|(999)|(mm)?)\s?:?(\s?)(\d{1,4})/ig);
   //turn DOM into array so you can iterate over it
   var elems = document.getElementsByTagName('dd');
   //convert NodeList of all <dd> elements to an Array so we can iterate through
@@ -33,7 +33,7 @@ $(document).ready(function(){
         //Concatenate into URL
         var callNumberUrl = 'http://oskicat.berkeley.edu/search~S1?/e' + callNumberReplace2;
         //create replacement element with proper linking
-        var newElem = '<a href="' + callNumberUrl + '">' + callNumber + '</a>';
+        var newElem = 'Ѭ href="' + callNumberUrl + '">' + callNumber + 'Ж';
         //add created link to array that will be pushed to DOM after loop
         elemArray.push(newElem);
         //join array so it's nice and pretty

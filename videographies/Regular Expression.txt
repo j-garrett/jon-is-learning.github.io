@@ -69,6 +69,9 @@ Remove inline styles from tags:
 
 (style)="[^>]*"
 
+Adapt above method for names and ids as these were for anchor tags/links that will not need to be ported to Drupal.
+Excess </a> tags should be ignored at render without trouble.
+
 Remove sidebar:
 
 <td width="100"><img src="http://www.lib.berkeley.edu/MRC/sideid.gif"></td>
