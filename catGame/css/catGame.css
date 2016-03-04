@@ -14,9 +14,18 @@
 
 }
 .flexContainerRow{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    justify-content:center;
-    align-items:center;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+        -ms-flex-align:center;
+            align-items:center;
     height:15vh;
 
 }
@@ -85,6 +94,8 @@
     position:fixed;
     bottom:0;
     background-image: url("http://jon.tips/fun%20images/grassTops.png"),
+                    -webkit-linear-gradient(bottom, rgba(0, 0, 0, 1),  rgba(255, 255, 255, 0));
+    background-image: url("http://jon.tips/fun%20images/grassTops.png"),
                     linear-gradient(to top, rgba(0, 0, 0, 1),  rgba(255, 255, 255, 0));
     background-size: 300px 500px;
     z-index: 2;
@@ -97,23 +108,39 @@
 }
 .hiddenPrey{
 
-    animation: disappear 3s forwards ease;
+    -webkit-animation: disappear 3s forwards ease;
+
+            animation: disappear 3s forwards ease;
 }
 .foundPrey{
-    animation: windBlowing 3s 3 linear;
+    -webkit-animation: windBlowing 3s 3 linear;
+            animation: windBlowing 3s 3 linear;
 }
 .caughtPrey{
     background:red;
-    animation-fill-mode:forwards;
-    animation: disappear 1.5s forwards ease ;
+    -webkit-animation-fill-mode:forwards;
+            animation-fill-mode:forwards;
+    -webkit-animation: disappear 1.5s forwards ease ;
+            animation: disappear 1.5s forwards ease ;
 }
 #gameResults{
     text-align: center;
     background-color: white;
 }
+@-webkit-keyframes windBlowing{
+    75%{-webkit-transform: translate(8px) rotate(5deg);transform: translate(8px) rotate(5deg)}
+    25%{-webkit-transform: translate(-8px) rotate(-5deg);transform: translate(-8px) rotate(-5deg)}
+}
 @keyframes windBlowing{
-    75%{transform: translate(8px) rotate(5deg)}
-    25%{transform: translate(-8px) rotate(-5deg)}
+    75%{-webkit-transform: translate(8px) rotate(5deg);transform: translate(8px) rotate(5deg)}
+    25%{-webkit-transform: translate(-8px) rotate(-5deg);transform: translate(-8px) rotate(-5deg)}
+}
+
+@-webkit-keyframes disappear{
+    100%{
+        opacity:0;
+        display:none;
+    }
 }
 
 @keyframes disappear{
