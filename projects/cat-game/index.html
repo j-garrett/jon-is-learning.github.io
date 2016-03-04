@@ -1,0 +1,94 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <title>Cat Rogues</title>
+    <link rel="stylesheet" href="css/cat-game.css">
+    <link rel="stylesheet" href="css/cat-game-modal.css">
+</head>
+<body>
+<!-- Pre and post game stats modal overlay-->
+<!-- Pre game settings selection modal-->
+<!--catGame Modal Test with Flexbox-->
+<div id="modalBackLayer2" class="noDisplay">
+    <div id="modalBackLayer">
+        <div id="modalContainer">
+            <div id="settingsModal" class="modal noDisplay">
+                <div class="innerModal">
+                    <form id="playerOptionsInput">
+                        <div class="formGroup">
+                            <label for="playerNameInput">Name:</label>
+                            <input id="playerNameInput" type="text" placeholder="enter name..." required autofocus>
+                        </div>
+                        <div class="formGroup">
+                            <label for="gameLength">Timer:</label>
+                            <input id="gameLength" type="number"placeholder="seconds..." required>
+                        </div>
+                        <div class="formGroup">
+                            <label for="catColor">Cat Color:</label>
+                            <input id="catColorChoice" type="color" value="#FF2CEB">
+                        </div>
+                        <div id="catChoices">
+                        <img class="catChoice" id="catChoice1" src="img/transparentCat.png">
+                        <img class="catChoice" id="catChoice2" src="img/transparentCat.png">
+                        <img class="catChoice" id="catChoice3" src="img/transparentCat.png">
+                        </div>
+                        <button type="submit" id="startGameButton">Start Game</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Cat Game container! -->
+<div id="catGameContainer" class="noDisplay">
+<!--Top bar of user stats, etc.-->
+<!--Flex box row for header of game stats.-->
+<div id="catGameHeader"  class="flexContainerRow">
+    <!--div for flex left stats-->
+    <div id="gameStatsLeft">
+        <!--Picture of cat the user has selected--><!--Change class based on selection by user-->
+        <div id="userCat">
+            <!--This image is stand in. When functionality is complete, class + image will be loaded by class change with JS and CSS-->
+            <img src="img/transparentCat.png" />
+        </div>
+        <!-- Bar/Number to indicate just HOW CUTE the user is (0-100)-->
+        <div id="cutenessLevel">
+        </div>
+    </div>
+    <!-- The common name of the cat selected by the user-->
+    <div id="commonNameBanner">
+        <!--Player name to be inserted by JavaScript-->
+        <h1><small><span id="playerNameOutput"></span> now a...</small><span id="catChoiceName">Sand Cat</span></h1>
+    </div>
+    <!--div for flex right stats-->
+    <div id="gameStatsRight" class="flexContainerRow">
+        <!-- The countdown timer. Bouncing. Warning. How much time is lefT?!-->
+        <div class="gameStatsText">
+            <p id="timer"></p>
+            <h4>Seconds<br>Remaining</h4>
+        </div>
+        <!-- Track the number of successful hunts -->
+        <div class="gameStatsText">
+            <p id="killCounter">0</p>
+            <h4>Killed</h4>
+        </div>
+    </div>
+</div>
+<div id="catGameField">
+  <div id="gameResults" class="noDisplay">
+
+  </div>
+    <!-- Container div for the repeated background and generated prey divs. The playing field.-->
+  <div id="huntingField">
+    </div>
+</div>
+</div>
+<!-- Grass fence footer to help give depth. You are the cat. Peering out of your hiding place. Stalking prey.-->
+<div id="grassFooter">
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/cat-game.js"></script>
+</body>
+</html>

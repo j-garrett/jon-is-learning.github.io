@@ -1,0 +1,94 @@
+
+#modalBackLayer2{
+    background:  url('../img/cat-grass.svg') 0px 0px/70px 100px repeat;
+    min-height:100vh;
+}
+#modalBackLayer{
+    min-height:100vh;
+    background-color:hsla(308, 100%, 50%, .4);
+}
+#modalContainer{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    height:100vh;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+        -ms-flex-align:center;
+            align-items:center;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+}
+#settingsModal{
+    z-index:10;
+    background:hsla(0, 100%, 100%, 0.8);
+    border:3px solid hsla(236, 100%, 31%, 1);
+    margin:auto;
+}
+.innerModal{
+}
+#playerOptionsInput{
+    padding:1em;
+}
+.formGroup{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    margin-top:2em;
+}
+.formGroup>label{
+    -webkit-box-flex: 1 ;
+    -webkit-flex: 1 ;
+        -ms-flex: 1 ;
+            flex: 1 ;
+    -webkit-align-self:center;
+        -ms-flex-item-align:center;
+            align-self:center;
+}
+.formGroup>input{
+    height:2em;
+    -webkit-box-flex:1;
+    -webkit-flex:1 70%;
+        -ms-flex:1 70%;
+            flex:1 70%;
+    -webkit-align-self:center;
+        -ms-flex-item-align:center;
+            align-self:center;
+}
+#catChoices{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-flex-flow:row wrap;
+        -ms-flex-flow:row wrap;
+            flex-flow:row wrap;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+}
+.catChoice{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 auto;
+        -ms-flex: 1 auto;
+            flex: 1 auto;
+    max-width:200px;
+    max-height:200px;
+    margin: 2em 2em 0 2em;
+}
+button{
+    display:block;
+    margin: 2em auto;
+}

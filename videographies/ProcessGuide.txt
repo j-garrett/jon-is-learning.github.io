@@ -1,3 +1,0 @@
-Cleanup HTML by copy/pasting to http://www.dirtymarkup.com/
-    Try to automate this as part of save process or to run before other JS when full code is written.
-
