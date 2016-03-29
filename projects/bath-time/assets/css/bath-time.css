@@ -4,3 +4,101 @@ img{
 	border: 1px solid #BDCAE8;
 	border-radius: 10px;
 }
+
+body *{
+  border: 1px solid rgba(150, 200, 250, .15);
+  background: rgba(150, 200, 250, .15);
+}
+
+html{
+  font-size: 16px;
+}
+
+body{
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+}
+h1{
+  font-size: 3rem;
+}
+
+header{
+  margin: 20px 5% 0 5%;
+  position: fixed;
+  width: 90%;
+  height: 40px;
+}
+header *{
+  display: inline;
+}
+
+.flex__parent{
+  display: flex;
+}
+
+.flex-column__parent{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row__parent{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex__parent-wrap{
+  flex-wrap: wrap;
+}
+
+.flex__parent-center{
+  justify-content: center;
+}
+
+.flex__parent-around{
+  justify-content: space-around;
+}
+
+.flex__parent-between{
+  justify-content: space-between;
+}
+
+.flex__parent-end{
+  justify-content: flex-end;
+}
+
+.flex__parent-align-end{
+  align-items: flex-end;
+}
+
+.flex__self-center{
+  align-self: center;
+}
+
+.flex__self-stretch{
+  align-self: stretch;
+}
+
+.flex__item-sm-sq{
+  flex: 0 1 100px;
+  height: 100px;
+  margin: 5px;
+}
+
+.flex__item-md{
+  flex: 0 0 175px;
+  height: 175px;
+  margin: 5px;;
+}
+
+.flex__item-lg-sq{
+  flex: 0 0 300px;
+  height: 300px;
+  margin: 5px;;
+}
+
+.flex__item-xlg{
+  flex: 0 1 450px;
+  height: 300px;
+  margin: 5px;;
+}
